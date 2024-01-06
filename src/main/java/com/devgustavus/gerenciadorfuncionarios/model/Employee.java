@@ -1,4 +1,4 @@
-package com.devgustavus.gerenciadorfuncionarios.model;
+package com.devgustavus.gerenciadorfuncionarios.Model;
 
 import java.io.Serializable;
 
