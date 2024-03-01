@@ -11,6 +11,8 @@ import com.devgustavus.gerenciadorfuncionarios.Exception.UserNotFoundException;
 import com.devgustavus.gerenciadorfuncionarios.Model.Employee;
 import com.devgustavus.gerenciadorfuncionarios.Repo.EmployeeRepo;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class EmployeeService {
 	private final EmployeeRepo employeeRepo;
@@ -38,8 +40,8 @@ public class EmployeeService {
 		return employeeRepo.findEmployeeById(id).orElseThrow(() -> new UserNotFoundException("User id: "+ id +" not found"));
 	}
 	
+	@Transactional
 	public void deleteEmployee(Long id) {
 		employeeRepo.deleteEmployeeById(id);
 	}
 }
-

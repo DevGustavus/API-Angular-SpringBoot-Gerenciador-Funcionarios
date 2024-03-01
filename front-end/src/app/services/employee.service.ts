@@ -21,6 +21,10 @@ export class EmployeeService {
     return this.httpClient.post<Employee>(`${this.url}/add`, employee);
   }
 
+  public updateEmployee(employee: Employee): Observable<Employee> {
+    return this.httpClient.put<Employee>(`${this.url}/update`, employee);
+  }
+
   public deleteEmployees(employeeId: number): Observable<void> {
     return this.httpClient.delete<void>(`${this.url}/delete/${employeeId}`);
   }
